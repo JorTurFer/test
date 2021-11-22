@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Comment evaluate
     outputs:
-      run-e2e: startsWith(github.event.comment.body,'/run-e2e') && steps.check-permission.outputs.has-permission }}
+      run-e2e: ${{ startsWith(github.event.comment.body,'/run-e2e') && steps.check-permission.outputs.has-permission }}
     steps:
       - name: Check user permission
         if: startsWith(github.event.comment.body,'/run-e2e')
